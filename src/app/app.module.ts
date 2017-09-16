@@ -12,6 +12,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeFormComponent } from './recipes/recipe-form/recipe-form.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeElementComponent } from './recipes/recipe-element/recipe-element.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 
 const AppRoutes: Route[] = [
@@ -21,7 +22,8 @@ const AppRoutes: Route[] = [
       { path: ':id', component: RecipeDetailComponent },
       { path: ':id/edit', component: RecipeFormComponent }
     ]
-  }
+  },
+  { path: 'shopping-list', component: ShoppingListComponent }
 ];
 
 @NgModule({
@@ -32,8 +34,9 @@ const AppRoutes: Route[] = [
     RecipeFormComponent,
     RecipeDetailComponent,
     RecipeElementComponent,
-    DropDownDirective
-  ],
+    DropDownDirective,
+    ShoppingListComponent
+],
   imports: [
     BrowserModule,
     FormsModule,
