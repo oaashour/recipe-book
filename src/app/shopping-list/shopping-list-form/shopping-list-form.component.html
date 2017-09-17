@@ -1,0 +1,33 @@
+<form role="form" #form="ngForm" (submit)="onSubmit()">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-9">
+        <input type="text" class="form-control" 
+              placeholder="ingredient" 
+              [(ngModel)]="ingredient.name" 
+              name="name"             
+              required
+              #name="ngModel">                            
+              <div [hidden]="name.valid || name.pristine"  class="help-block">
+                  Name is required
+              </div>
+        
+      </div>
+      <div class="col-md-3">
+          <input type="number" 
+                class="form-control" 
+                placeholder="amount" 
+                [(ngModel)]="ingredient.amount" 
+                name="amount"
+                #amount="ngModel"
+                required>
+          <div [hidden]="amount.valid || amount.pristine" class="help-block">
+              amount is required
+          </div>      
+      </div>
+    </div>
+  </div> 
+  <button type="submit" class="btn btn-primary">Save</button>
+  <button type="button" class="btn btn-danger" *ngIf="id != null" (click)="onDelete()">Delete</button>      
+  <a class="btn btn-danger" *ngIf="id != null" (click)="onCancelEdit()">Cancel</a>      
+</form>
